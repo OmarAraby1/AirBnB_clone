@@ -1,3 +1,4 @@
+![image](https://github.com/OmarAraby1/AirBnB_clone/assets/72764839/c7de3158-eb49-4390-831c-4e635e729b66)
 
 Background Context
 Welcome to the AirBnB clone project!
@@ -37,7 +38,7 @@ python unittest
 Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-General
+### General
 How to create a Python package
 How to create a command interpreter in Python using the cmd module
 What is Unit testing and how to implement it in a large project
@@ -48,12 +49,14 @@ What is an UUID
 What is *args and how to use it
 What is **kwargs and how to use it
 How to handle named arguments in a function
-Copyright - Plagiarism
+
+### Copyright - Plagiarism
 You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
 You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
 You are not allowed to publish any content of this project.
 Any form of plagiarism is strictly forbidden and will result in removal from the program.
-Requirements
+
+### Requirements
 Python Scripts
 Allowed editors: vi, vim, emacs
 All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
@@ -67,7 +70,8 @@ All your modules should have a documentation (python3 -c 'print(__import__("my_m
 All your classes should have a documentation (python3 -c 'print(__import__("my_module").MyClass.__doc__)')
 All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
 A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
-Python Unit Tests
+
+### Python Unit Tests
 Allowed editors: vi, vim, emacs
 All your files should end with a new line
 All your test files should be inside a folder tests
@@ -86,44 +90,46 @@ We strongly encourage you to work together on test cases, so that you don’t mi
 GitHub
 There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score.
 
-More Info
-Execution
+### More Info
+## Execution
 Your shell should work like this in interactive mode:
 
-$ ./console.py
-(hbnb) help
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-
-(hbnb) 
-(hbnb) 
-(hbnb) quit
-$
+  $ ./console.py
+  (hbnb) help
+  
+  Documented commands (type help <topic>):
+  ========================================
+  EOF  help  quit
+  
+  (hbnb) 
+  (hbnb) 
+  (hbnb) quit
+  $
+  
 But also in non-interactive mode: (like the Shell project in C)
 
-$ echo "help" | ./console.py
-(hbnb)
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb) 
-$
-$ cat test_help
-help
-$
-$ cat test_help | ./console.py
-(hbnb)
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb) 
-$
+  $ echo "help" | ./console.py
+  (hbnb)
+  
+  Documented commands (type help <topic>):
+  ========================================
+  EOF  help  quit
+  (hbnb) 
+  $
+  $ cat test_help
+  help
+  $
+  $ cat test_help | ./console.py
+  (hbnb)
+  
+  Documented commands (type help <topic>):
+  ========================================
+  EOF  help  quit
+  (hbnb) 
+  $
+  
 All tests should also pass in non-interactive mode: $ echo "python3 -m unittest discover tests" | bash
 
 
 
-Video library(8 total)
+![image](https://github.com/OmarAraby1/AirBnB_clone/assets/72764839/484a821a-ce49-467a-bc70-69f5f9a74dff)
