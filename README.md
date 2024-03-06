@@ -1,6 +1,6 @@
 ![image](https://github.com/OmarAraby1/AirBnB_clone/assets/72764839/c7de3158-eb49-4390-831c-4e635e729b66)
 
-###Background Context
+### Background Context
 Welcome to the AirBnB clone project!
 Before starting, please read the AirBnB concept page.
 
