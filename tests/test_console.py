@@ -65,6 +65,30 @@ class TestBaseModel(unittest.TestCase):
                 base_model_dict["updated_at"],
                 base_model.updated_at.isoformat())
 
+    def test_file_storage(self):
+        """Tests the FileStorage class functionality"""
+
+        base_model = BaseModel()
+        base_model.save()
+
+        storage.reload()  # Reload objects from the file
+
+        self.assertEqual(len(storage.all()), 1)  # Check if one object is stored
+
+        new_model = BaseModel()
+        new_model.save()
+        storage.reload()
+
+        self.assertEqual(len(storage.all()), 2)  # Check if two objects are stored
+
+        # Check if the retrieved objects are the same as the created ones
+        obj1 = storage.all().get(f"{base_model.__class__.__name__}.{base_model.id}")
+        self.assertIsInstance(obj1, BaseModel)
+        self.assertEqual(obj1, base_model)
+
+        obj2 = storage.all().get(f"{new_model.__class__.__name__}.{new_model.id}")
+        self.assertIsInstance(obj2, BaseModel)
+        self.assertEqual(obj2, new_model)
 
 if __name__ == "__main__":
     unittest.main()
