@@ -3,6 +3,7 @@ import unittest
 from models.base_model import BaseModel
 from models import storage
 
+
 class TestBaseModel(unittest.TestCase):
     """Unit tests for the BaseModel class"""
 
@@ -70,25 +71,24 @@ class TestBaseModel(unittest.TestCase):
 
         base_model = BaseModel()
         base_model.save()
-
         storage.reload()  # Reload objects from the file
-
-        self.assertEqual(len(storage.all()), 1)  # Check if one object is stored
-
+        self.assertEqual(len(storage.all()), 1)
         new_model = BaseModel()
         new_model.save()
         storage.reload()
-
-        self.assertEqual(len(storage.all()), 2)  # Check if two objects are stored
-
+        self.assertEqual(len(storage.all()), 2)
         # Check if the retrieved objects are the same as the created ones
-        obj1 = storage.all().get(f"{base_model.__class__.__name__}.{base_model.id}")
+        obj1 = storage.all().get(
+                f"{base_model.__class__.__name__}.{base_model.id}"
+                )
         self.assertIsInstance(obj1, BaseModel)
         self.assertEqual(obj1, base_model)
-
-        obj2 = storage.all().get(f"{new_model.__class__.__name__}.{new_model.id}")
+        obj2 = storage.all().get(
+                f"{new_model.__class__.__name__}.{new_model.id}"
+                )
         self.assertIsInstance(obj2, BaseModel)
         self.assertEqual(obj2, new_model)
+
 
 if __name__ == "__main__":
     unittest.main()
