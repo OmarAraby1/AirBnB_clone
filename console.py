@@ -7,46 +7,52 @@ an Airbnb-like application.
 Currently, it offers functionalities like displaying help and exiting.
 More functionalities will be added as the project progresses.
 """
+from cmd import Cmd
 
 
-def main():
-    """Main function for the command-line interpreter
-
-    This function runs the interpreter in an interactive loop,
-    allowing users to enter commands and receive responses.
+class AirBnBConsole(Cmd):
+    """
+    Class representing the Airbnb Console using the cmd module
     """
 
-    commands = {"help": print_help, "quit": exit_interpreter}
+    prompt = "(hbnb) "
+    intro = """
+Welcome to the AirBnB Clone command-line interface!
 
-    while True:
-        prompt = "(hbnb) "
-        user_input = input(prompt)
+Type 'help' for a list of available commands.
+"""
 
-        if not user_input:
-            continue
+    def do_help(self, arg):
+        """
+        Prints a list of available commands and their brief descriptions
+        """
+        if arg:
+            print(f"No help available for '{arg}'.")
+            return
+        self.stdout.write(self.intro + "\n")
+        self.stdout.write("Documented commands (type help <topic>):\n")
+        super().do_help(arg)
 
-        if user_input.lower() in commands:
-            commands[user_input.lower()]()
-        else:
-            print(f"Invalid command: '{user_input}'. Use 'help' for a list.")
+    def do_quit(self, arg):
+        """
+        Exits the interpreter and closes the program
+        """
+        print("Exiting AirBnB Clone interpreter...")
+        return True
 
+    def emptyline(self):
+        """
+        Handles cases where user presses enter without input
+        """
+        pass
 
-def print_help():
-    """Prints a list of available commands and their brief descriptions"""
-
-    print("""
-Documented commands (type help <topic>):
-  ========================================
-  EOF   help  quit
-""")
-
-
-def exit_interpreter():
-    """Exits the interpreter and closes the program"""
-
-    print("Exiting AirBnB Clone interpreter...")
-    exit(0)
+    def do_EOF(self, arg):
+        """
+        Exits the interpreter when user types Ctrl+D (EOF)
+        """
+        print()
+        return True
 
 
 if __name__ == "__main__":
-    main()
+    AirBnBConsole().cmdloop()
