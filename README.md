@@ -1,14 +1,14 @@
-## AirBnB Clone Project
+# AirBnB Clone Project
 This project is a Python implementation of a command-line interface similar to Airbnb's functionalities.
 
-## Command Interpreter
+# Command Interpreter
 The project includes a command interpreter named console.py. This script allows users to interact with the application and execute various commands.
 
 ## Starting the Interpreter:
 
-# There are two ways to interact with the interpreter:
+### There are two ways to interact with the interpreter:
 
-  Interactive Mode:
+ ### Interactive Mode:
 
   Open a terminal and navigate to the directory containing console.py.
   Run the script using the following command:
@@ -19,7 +19,7 @@ The project includes a command interpreter named console.py. This script allows 
   Use code with caution.
   This will launch the interpreter in an interactive mode, displaying a prompt like (hbnb). You can then enter commands and receive responses.
 
-  Non-Interactive Mode:
+ ### Non-Interactive Mode:
 
   You can pipe commands through the interpreter using echo:
   
@@ -29,7 +29,7 @@ The project includes a command interpreter named console.py. This script allows 
   Use code with caution.
   This will display the help message without entering the interactive mode.
 
-  Using the Interpreter:
+ ### Using the Interpreter:
 
   The interpreter provides various commands for interacting with the Airbnb-like application.
 
@@ -41,7 +41,7 @@ The project includes a command interpreter named console.py. This script allows 
 
     (hbnb) help quit
     
-  Examples:
+ ### Examples:
 
   Get help on available commands:
 
