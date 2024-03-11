@@ -5,13 +5,29 @@ from models.base_model import BaseModel
 class TestBaseModel(unittest.TestCase):
     """Unit tests for the BaseModel class"""
 
-    def test_init(self):
-        """Tests the initialization of a BaseModel instance"""
-        base_model = BaseModel()
-        self.assertIsInstance(base_model.id, str)
+    def test_init_with_kwargs(self):
+        """Tests the initialization of a BaseModel
+        instance from a dictionary"""
+
+        base_model_dict = {
+            "id": "123e4567-e89b-12d3-a456-426655440000",
+            "created_at": "2024-03-10T12:00:00",
+            "updated_at": "2024-03-11T15:30:00",
+            "name": "My Test Object",  # Additional attribute
+        }
+
+        base_model = BaseModel(**base_model_dict)
+
+        self.assertEqual(base_model.id, base_model_dict["id"])
         self.assertIsInstance(base_model.created_at, datetime)
+        self.assertEqual(
+                base_model.created_at,
+                datetime.fromisoformat(base_model_dict["created_at"]))
         self.assertIsInstance(base_model.updated_at, datetime)
-        self.assertEqual(base_model.created_at, base_model.updated_at)
+        self.assertEqual(
+                base_model.updated_at,
+                datetime.fromisoformat(base_model_dict["updated_at"]))
+        self.assertEqual(base_model.name, base_model_dict["name"])
 
     def test_str(self):
         """Tests the string representation of a BaseModel instance"""
