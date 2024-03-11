@@ -34,10 +34,7 @@ class TestBaseModel(unittest.TestCase):
     def test_str(self):
         """Tests the string representation of a BaseModel instance"""
         base_model = BaseModel()
-        expected_string = f"
-        [{base_model.__class__.__name__}]
-        ({base_model.id})
-        {base_model.__dict__}"
+        expected_string = f"[{base_model.__class__.__name__}] ({base_model.id}) {base_model.__dict__}"
         self.assertEqual(str(base_model), expected_string)
 
     def test_save(self):
