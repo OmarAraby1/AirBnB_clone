@@ -16,7 +16,10 @@ class TestBaseModel(unittest.TestCase):
     def test_str(self):
         """Tests the string representation of a BaseModel instance"""
         base_model = BaseModel()
-        expected_string = f"[{base_model.__class__.__name__}] ({base_model.id}) {base_model.__dict__}"
+        expected_string = f"
+        [{base_model.__class__.__name__}]
+        ({base_model.id})
+        {base_model.__dict__}"
         self.assertEqual(str(base_model), expected_string)
 
     def test_save(self):
@@ -33,11 +36,17 @@ class TestBaseModel(unittest.TestCase):
         base_model_dict = base_model.to_dict()
 
         self.assertIsInstance(base_model_dict, dict)
-        self.assertEqual(base_model_dict["__class__"], base_model.__class__.__name__)
+        self.assertEqual(
+                base_model_dict["__class__"],
+                base_model.__class__.__name__)
         self.assertIsInstance(base_model_dict["created_at"], str)
         self.assertIsInstance(base_model_dict["updated_at"], str)
-        self.assertEqual(base_model_dict["created_at"], base_model.created_at.isoformat())
-        self.assertEqual(base_model_dict["updated_at"], base_model.updated_at.isoformat())
+        self.assertEqual(
+                base_model_dict["created_at"],
+                base_model.created_at.isoformat())
+        self.assertEqual(
+                base_model_dict["updated_at"],
+                base_model.updated_at.isoformat())
 
 
 if __name__ == "__main__":
