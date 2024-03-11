@@ -5,9 +5,9 @@ from datetime import datetime
 
 
 class BaseModel:
-    """Base class for all model classes."""
+    """A base class for all hbnb models"""
     def __init__(self, *args, **kwargs):
-        """Initializes a BaseModel instance."""
+        """Instatntiates a new model"""
         if not kwargs:
             from models import storage
             self.id = str(uuid.uuid4())
@@ -23,18 +23,18 @@ class BaseModel:
             self.__dict__.update(kwargs)
 
     def __str__(self):
-        """Returns a formatted string representation of the instance."""
+        """Returns a string representation of the instance"""
         cls = (str(type(self)).split('.')[-1]).split('\'')[0]
         return '[{}] ({}) {}'.format(cls, self.id, self.__dict__)
 
     def save(self):
-        """Updates the updated_at attribute to the current datetime."""
+        """Updates updated_at with current time when instance is changed"""
         from models import storage
         self.updated_at = datetime.now()
         storage.save()
 
     def to_dict(self):
-        """Returns a dictionary representation of the instance."""
+        """Convert instance into dict format"""
         dictionary = {}
         dictionary.update(self.__dict__)
         dictionary.update({'__class__':
