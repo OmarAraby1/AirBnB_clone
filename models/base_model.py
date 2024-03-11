@@ -21,7 +21,7 @@ class BaseModel:
                                                      '%Y-%m-%dT%H:%M:%S.%f')
             del kwargs['__class__']
             self.__dict__.update(kwargs)
-    
+
     def __str__(self):
         """Returns a formatted string representation of the instance."""
         cls = (str(type(self)).split('.')[-1]).split('\'')[0]
