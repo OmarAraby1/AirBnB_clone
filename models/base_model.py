@@ -5,11 +5,20 @@ from datetime import datetime
 class BaseModel:
     """Base class for all model classes."""
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """Initializes a BaseModel instance."""
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+
+        if kwargs:
+            # Initialize from a dictionary
+            self.__dict__.update(kwargs)
+            self.id = kwargs.get("id", str(uuid.uuid4()))  # Ensure a unique ID
+            self.created_at = datetime.fromisoformat(kwargs.get("created_at"))
+            self.updated_at = datetime.fromisoformat(kwargs.get("updated_at"))
+        else:
+            # Initialize a new instance
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """Returns a formatted string representation of the instance."""
