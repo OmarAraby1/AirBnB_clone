@@ -8,6 +8,7 @@ Currently, it offers functionalities like displaying help and exiting.
 More functionalities will be added as the project progresses.
 """
 
+
 def main():
     """Main function for the command-line interpreter
 
