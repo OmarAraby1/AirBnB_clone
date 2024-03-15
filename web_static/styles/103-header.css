@@ -1,0 +1,26 @@
+header {
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid #CCCCCC;
+  display: flex;
+  align-items: center;
+}
+
+header:before {  /* Create a pseudo-element to represent the logo */
+  content: "";
+  width: 20px;  /* Space for the logo */
+  height: 100%;
+}
+
+header h1 {  /* Assuming logo is replaced with an h1 element */
+  margin-left: 20px;  /* Space after the logo */
+  color: white;
+}
+
+/* Media queries for responsive adjustments (same as previous solution) */
+@media (max-width: 768px) {
+  header {
+    /* Adjust header styles for smaller screens (optional) */
+  }
+}

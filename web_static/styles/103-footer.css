@@ -1,0 +1,12 @@
+footer {
+  background-color: #F5F5F5;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Media queries for responsive adjustments (same as previous solution) */
+@media (max-width: 768px) {
+  footer {
+    /* Adjust footer styles for smaller screens (optional) */
+  }
+}

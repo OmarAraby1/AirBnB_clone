@@ -1,0 +1,32 @@
+section.places {
+  margin-top: 30px;  /* Add some space above the places section */
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  /* Adjust text alignment as needed (optional) */
+  text-align: left;  /* Example: Align title to the left */
+}
+
+article {
+  width: 390px;  /* Adjust width as needed for your layout */
+  display: inline-block;  /* Display listings horizontally */
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #FF5A5F;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  cursor: pointer;  /* Add hover effect for each listing (optional) */
+  transition: transform 0.2s ease-in-out;  /* Add hover effect transition (optional) */
+}
+
+article:hover {
+  transform: scale(1.02);  /* Add subtle zoom effect on hover (optional) */
+}
+
+h2 {
+  font-size: 20px;  /* Adjust font size of place name */
+  margin-bottom: 10px;
+  text-align: center;  /* Center the place name horizontally */
+}

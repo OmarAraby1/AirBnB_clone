@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #333; /* Improved contrast for text */
+  font-size: 16px; /* Slightly larger font size for better readability */
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* Link styles for improved color contrast */
+a {
+  color: #007bff;  /* Blue link color */
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover for clarity */
+}

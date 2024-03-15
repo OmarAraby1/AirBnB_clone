@@ -1,0 +1,10 @@
+section.filters {
+  margin-bottom: 30px;
+}
+
+/* Media queries for responsive adjustments (same as previous solution) */
+@media (max-width: 768px) {
+  section.filters {
+    /* Adjust filter section styles for smaller screens (optional) */
+  }
+}
